@@ -1,7 +1,7 @@
 import { IsEmail, IsNotEmpty, IsString } from 'class-validator';
 
 // Validate incoming request for the user
-export class UserCreate {
+export class UserSignUp {
   username: string;
 
   @IsString()
@@ -11,5 +11,10 @@ export class UserCreate {
   @IsEmail()
   @IsNotEmpty()
   email: string;
-  isActive: boolean;
+}
+
+export class UserSignUpResponse {
+  id: number;
+  username: string;
+  email: string;
 }
